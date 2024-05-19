@@ -21,17 +21,9 @@ function PokemonElement () {
   }
 }
 
-async function fetchData(id) {
-  return await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-  .then(res => {
-    if (res.status === 404) {
-      return {name: "404 error"}
-    } else 
-      return res.json()
-  })
-  .then(res => setPokemon(res)
-  )
+function fetchData() {
 }
+
   return (
     <>
     <h1>pokemon api</h1>
