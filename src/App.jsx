@@ -6,16 +6,14 @@ const inputText = useRef();
 
 function PokemonElement () {
   if (pokemon === "") {
-    return <p>pokemon name displayed here</p>;
+    return <p>ここに名前と画像が表示されます</p>;
   } else {
     return (
       <>
         <dt>name</dt>
         <dd>{pokemon.name}</dd>
-        <dt>height</dt>
-        <dd>{pokemon.height} m</dd>
-        <dt>weight</dt>
-        <dd>{pokemon.weight} kg</dd>
+        <dt>image</dt>
+        <dd><img src={pokemon.sprites.front_default} alt="" /></dd>
       </>
     )
   }
