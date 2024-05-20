@@ -5,7 +5,8 @@ const [pokemon, setPokemon] = useState("");
 const inputText = useRef();
 
 function PokemonElement () {
-  if (pokemon === "") {
+  console.log(pokemon)
+  if (pokemon.sprites === undefined) {
     return <p>ここに名前と画像が表示されます</p>;
   } else {
     return (
@@ -20,7 +21,7 @@ function PokemonElement () {
 }
 
 async function fetchData(id) {
-  return await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+  await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
   .then(res => {
     if (res.status === 404) {
       return {name: "404 error"}
